@@ -1,8 +1,9 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-import Markets from '../views/Markets.vue'
-import Exchanges from '../views/Exchanges.vue'
+import Markets from '../views/Markets'
+import Exchanges from '../views/Exchanges'
+import ExchangeView from '../views/ExchangeView'
 
 Vue.use(VueRouter)
 
@@ -17,9 +18,19 @@ const routes = [
     component: Exchanges
   },
   {
+    path: '/exchanges/:id',
+    name: 'exchange',
+    component: ExchangeView
+  },
+  {
     path: '/markets',
     name: 'markets',
     component: Markets
+  },
+  {
+    path: '/markets/:id',
+    name: 'market',
+    component: ExchangeView
   },
 ]
 

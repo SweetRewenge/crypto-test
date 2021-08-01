@@ -37,5 +37,13 @@ export default {
   data: () => ({
     //
   }),
+
+  mounted() {
+    // const connectWS = new WebSocket('wss://ws.coincap.io/prices?assets=ALL')
+    //
+    // connectWS.onmessage = function({ data }) {
+    //   console.log(event);
+    // }
+  }
 };
 </script>
