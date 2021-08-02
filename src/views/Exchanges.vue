@@ -6,7 +6,7 @@
     @click:row="openPage"
   >
     <template v-slot:item.percentTotalVolume="{ item }">
-      <span>{{ (+item.percentTotalVolume).toFixed(4) }}%</span>
+      <span>{{ (+item.percentTotalVolume).toFixed(2) }}%</span>
     </template>
 
     <template v-slot:item.volumeUsd="{ item }">
