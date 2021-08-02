@@ -1,3 +1,3 @@
 export const getMarket = (state) => (exchangeId) => {
-  return state.exchanges.find(item => item.exchangeId === exchangeId)
+  return state.markets.find(item => item.exchangeId === exchangeId)
 }
