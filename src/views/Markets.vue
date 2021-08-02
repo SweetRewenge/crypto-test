@@ -3,6 +3,7 @@
     class="elevation-1"
     :headers="headers"
     :items="markets"
+    @click:row="openPage"
   >
     <template v-slot:item.priceUsd="{ item }">
       <span>${{ (+item.priceUsd).toFixed(2) }}</span>
@@ -37,6 +38,20 @@ export default {
 
   methods: {
     ...mapActions(['getMarkets']),
+
+    openPage(value) {
+      console.log(value)
+      this.$router.push({
+        name: 'market',
+        params: {
+          id: value.exchangeId,
+        },
+        query: {
+          quoteId: value.quoteId,
+          baseId: value.baseId,
+        }
+      })
+    },
   },
 }
 </script>

@@ -3,9 +3,10 @@
     class="elevation-1"
     :headers="headers"
     :items="exchanges"
+    @click:row="openPage"
   >
     <template v-slot:item.percentTotalVolume="{ item }">
-      <span>{{ (+item.percentTotalVolume).toFixed(4) }}%</span>
+      <span>{{ (+item.percentTotalVolume).toFixed(2) }}%</span>
     </template>
 
     <template v-slot:item.volumeUsd="{ item }">
@@ -41,6 +42,15 @@ export default {
 
   methods: {
     ...mapActions(['getExchanges']),
+
+    openPage(value) {
+      this.$router.push({
+        name: 'exchange',
+        params: {
+          id: value.exchangeId
+        }
+      })
+    },
   },
 }
 </script>

@@ -8,4 +8,7 @@ export default {
   async getMarkets() {
     return await axios.get('/api/markets')
   },
+  async getCandles(params) {
+    return await axios.get('/api/candles', { params })
+  },
 }
